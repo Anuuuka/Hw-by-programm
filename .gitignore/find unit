@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char c_a=0x60;
+   char c_1=0x01;
+   char c_2=0x02;
+   char c_3=0x04;
+   char c_4=0x08;
+   char c_5=0x10;
+   char c_6=0x20;
+   char c_7=0x40;
+   char c_8=0x80;
+   char c_b;
+   char c_d;
+
+    printf("c_a=%X\n c_a: ", c_a);
+    if (c_a & c_1)
+    {
+        printf(" 1 position ");
+        (c_a & c_5) ? printf (" 5 position ") : printf("");
+        (c_a & c_6) ? printf (" 6 position ") : printf("");
+        (c_a & c_7) ? printf (" 7 position ") : printf("");
+        (c_a & c_8) ? printf (" 8 position ") : printf("");
+    }
+    else {
+        if (c_a & c_2)
+        {
+            printf(" 2 position ");
+        (c_a & c_5) ? printf (" 5 position ") : printf("");
+        (c_a & c_6) ? printf (" 6 position ") : printf("");
+        (c_a & c_7) ? printf (" 7 position ") : printf("");
+        (c_a & c_8) ? printf (" 8 position ") : printf("");
+        }
+        else {
+            if ( c_a & c_3)
+            {
+                printf(" 3 position ");
+        (c_a & c_5) ? printf (" 5 position ") : printf("");
+        (c_a & c_6) ? printf (" 6 position ") : printf("");
+        (c_a & c_7) ? printf (" 7 position ") : printf("");
+        (c_a & c_8) ? printf (" 8 position ") : printf("");
+            }
+            else {
+                if (c_a & c_4)
+                {
+                    printf(" 4 position ");
+        (c_a & c_5) ? printf (" 5 position ") : printf("");
+        (c_a & c_6) ? printf (" 6 position ") : printf("");
+        (c_a & c_7) ? printf (" 7 position ") : printf("");
+        (c_a & c_8) ? printf (" 8 position ") : printf("");
+                }
+                else {
+                     c_d = c_a << 4;
+                     c_b = c_d & 0x0F0;
+                     c_d = c_a >> 4;
+                     c_b = c_b | c_d;
+                     printf("%d\n", c_b);
+
+                    if (c_b & c_1)
+                    {
+                        printf(" 1 position ");
+                    }
+                    else {
+                       if (c_b & c_2)
+                        {
+                            printf(" 2 position ");
+                        }
+                        else {
+                            if ( c_b & c_3)
+                        {
+                            printf(" 3 position ");
+                        }
+                        else {
+                            if (c_b & c_4)
+                            {
+                            printf(" 4 position ");
+                            }
+                            else{
+                                printf ("net 1");
+                          }
+                        }
+                      }
+                    }
+                }
+            }
+        }
+    }
+
+
+    return 0;
+}
