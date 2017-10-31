@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int i_a=64;
+   int i_b;
+   int i_d;
+
+   i_d = i_a << 4;
+   i_b = i_d & 0x0F0;
+   printf("%d\n", i_b);
+
+   i_d = i_a >> 4;
+   i_b = i_b | i_d;
+    printf("%d\n", i_b);
+
+
+
+    return 0;
+}
