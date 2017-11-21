@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i, j;
+    int max;
+    int cnt = 0;
+    int denary;//число в десятичной системе счисления
+    int binary;//число в двоичной системе счислания
+    int choice;//для проверки условия выйти/продолжить и выбора исходной и конечной сс
+    int result = 0;//конечное значение, т.к. исп. +=, то начальное значение равно нулю
+    int *mas_bin;//динамический массив для даоичного кода
+    int *mas_den;//динамический массив для временного заполнения  итогом деления на 2
+    char str[100];//считываемый двоичный код
+
+
+        do {
+                printf("Please  enter choice : \n");
+                printf("1.2-10\n");
+                printf("2.10-2\n");
+                printf("your choice: ");
+            scanf("%d", &choice);
+            //если это убрать, то после ввода 'boool' и нажатия Enter переменная 'str' пустая
+            scanf("%c", &str);
+            if ((choice != 1) && (choice != 2))
+            {
+                printf("\n  Problem.\n");
+                printf("  Again: ");
+            }
+        } while ((choice != 1) && (choice != 2));
+            if (choice == 1)
+            {
+                result = 0;
+                printf("\n 2-10.\n");
+                printf("\n  enter number: ");
+                gets(str);
+
+                mas_bin = (int *)malloc(strlen(str)*sizeof(int));
+                for (i=0; i<strlen(str); i++)
+                {
+                    mas_bin[i] = (str[i]) - 48;
+                    result += mas_bin[i] * pow(2, strlen(str) - i - 1);
+                }
+                printf("\n n: %d\n\n", result);
+
+                free(mas_bin);
+
+            }   else if (choice == 2)
+                {
+                    printf("\n  10-2.\n");
+                    printf("\n enter number: ");
+                    scanf("%d", &denary);
+                    max = denary;
+                    do {
+                        max = max / 2;
+                        cnt++;
+                    } while (max > 0);
+
+                    mas_bin = (int *)malloc(cnt*sizeof(int));
+                    mas_den = (int *)malloc(cnt*sizeof(int));
+                    printf("\n n: ");
+                    i = 0;
+                    do
+                    {
+                        mas_den[i] = denary;
+                        binary = mas_den[i] % 2;
+                        denary = denary / 2;
+                        mas_bin[i] = binary;
+                        i++;
+                    } while (denary > 0);
+
+                    for (j=0; j<i; j++)
+                    {
+                        printf("%d", mas_bin[i - j - 1]);
+                    }
+                    printf("\n\n");
+
+                    free(mas_bin);
+                    free(mas_den);
+                }
+                 return 0;
+}
