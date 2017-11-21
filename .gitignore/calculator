@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double a;
+    double b;
+    double res1, res2, res3, res4;
+    char choice;
+    printf("Please enter choice: 1.sum ,2.sub, 3.pro, 4.division\n");
+    printf("If you want to finish the program,then write x =  ");
+    scanf("%s", &choice);
+    switch (choice) {
+case '1' :
+     printf("Enter number a= ");
+    scanf("%lf", &a);
+    printf("Enter number b= ");
+    scanf("%lf", &b);
+    res1=a+b;
+    printf("sum= %lf", res1);
+    break;
+case '2' :
+    printf("Enter number a= ");
+    scanf("%lf", &a);
+    printf("Enter number b= ");
+    scanf("%lf", &b);
+    res2=a-b;
+    printf("sub= %lf", res2);
+    break;
+case '3' :
+    printf("Enter number a= ");
+    scanf("%lf", &a);
+    printf("Enter number b= ");
+    scanf("%lf", &b);
+    res3=a*b;
+    printf("pro= %lf", res3);
+    break;
+case '4' :
+    printf("Enter number a= ");
+    scanf("%lf", &a);
+    printf("Enter number b= ");
+    scanf("%lf", &b);
+    res4=a/b;
+    if(b=0)
+    {
+        printf("Division does not exist!!!");
+    }
+    else{
+         printf("Division= %lf", res4);
+    }
+    break;
+case 'x' :
+    printf("");
+    }
+
+
+    return 0;
+}
