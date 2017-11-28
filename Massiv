@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int mas[10];
+   int i;
+   int j, b;
+   int max;
+
+    for( i=0; i<10; i++)
+    {
+        printf("mas[%d] = ", i+1);
+        scanf(" %d", &mas[i]);
+    }
+    for(j=0; j<9; j++)
+        for(i=j+1; i<9; i++)
+            if(mas[j]>mas[i])
+        {
+            b=mas[j];
+            mas[j]=mas[i];
+            mas[i]=b;
+        }
+
+        for(i=0; i<9; i++)
+       {
+      printf("  %d ", mas[i]);
+    }
+
+
+    return 0;
+}
