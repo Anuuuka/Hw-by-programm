@@ -1,0 +1,15 @@
+ content:Column(
+              children: <Widget>[
+                       TextField( 
+                          autofocus: true,
+                         decoration: InputDecoration(labelText: 'Full Name', hintText: 'e.g. Anudari O.')
+                             ),
+                       TextField(
+                  autofocus: true,
+                  decoration: InputDecoration(labelText: 'Date', hintText:                            '12.25')
+                         )
+                                            
+              ]
+              
+            ),
+       
